@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Semana 11 | Calculadora de método y ergonomía</title><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero"><p class="eyebrow">Proyecto académico · Semana 11</p><h1>Calculadora de observación y ergonomía</h1>
+<p>Herramienta didáctica para analizar observación instantánea, tamaño de muestra, alturas de trabajo y momentos externos.</p></header>
+<main>
+<section class="panel"><h2>1. Observación instantánea</h2><p class="muted">Ingresa conteos enteros no negativos. La espera automática es el evento de interés.</p>
+<div class="grid two">
+<label>Trabajo manual productivo<input id="productive" type="number" min="0" value="110"></label>
+<label>Espera del ciclo automático<input id="waiting" type="number" min="0" value="60"></label>
+<label>Búsqueda de bandejas<input id="searching" type="number" min="0" value="20"></label>
+<label>Otras demoras<input id="other" type="number" min="0" value="10"></label></div>
+<div class="actions"><button id="calculateStats">Calcular estadística</button></div><div id="statsOutput" class="results" aria-live="polite"></div></section>
+<section class="panel"><h2>2. Ergonomía: altura de superficie</h2><p class="muted">La superficie se propone 50 mm por debajo del codo. Datos antropométricos ficticios del enunciado.</p>
+<div class="grid three">
+<label>Altura codo P5 (mm)<input id="elbowP5" type="number" value="920" min="0"></label>
+<label>Altura codo P50 (mm)<input id="elbowP50" type="number" value="1050" min="0"></label>
+<label>Altura codo P95 (mm)<input id="elbowP95" type="number" value="1170" min="0"></label></div>
+<label class="short">Separación bajo codo (mm)<input id="offset" type="number" value="50" min="0"></label>
+<div class="actions"><button id="calculateErgo">Calcular alturas</button></div><div id="ergoOutput" class="results" aria-live="polite"></div>
+<p class="note">Alcance cómodo frontal P5: 320 mm. Ubicar agarres frecuentes dentro de ese alcance desde la referencia de postura definida en el puesto.</p></section>
+<section class="panel"><h2>3. Momento externo</h2><p class="muted">Comparación mecánica hipotética: M = F × d. No es un límite de seguridad.</p>
+<div class="grid two"><label>Fuerza (N)<input id="force" type="number" min="0" step="any" value="20"></label>
+<label>Distancia 1 (m)<input id="distance1" type="number" min="0" step="any" value="0.45"></label>
+<label>Distancia 2 (m)<input id="distance2" type="number" min="0" step="any" value="0.25"></label></div>
+<div class="actions"><button id="calculateMoment">Calcular momentos</button></div><div id="momentOutput" class="results" aria-live="polite"></div></section>
+<section class="panel"><h2>4. Propuesta de bandeja y muestreo</h2><ul>
+<li>Bandeja conceptual de cartón, peso inferior a 200 g (verificar pesando el prototipo).</li>
+<li>Agarres laterales y zonas separadas para organizar materiales.</li><li>Pasillos despejados y materiales frecuentes dentro del alcance P5 de 320 mm.</li>
+<li>Muestreo al inicio, mitad y final de jornada, con instantes aleatorios y registro de todos los estados.</li></ul>
+<p class="note">La herramienta no certifica seguridad, cumplimiento sanitario ni normativo. Se requieren observaciones y mediciones reales para conclusiones del puesto.</p></section>
+</main><footer>Datos de ejemplo sintéticos · Uso académico · No ingresar datos personales</footer><script src="script.js"></script></body></html>
